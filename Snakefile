@@ -20,7 +20,7 @@ rule bol_splitter:
     output:
         "JH_test_bolunmatched.txt"
     shell:
-        "cat JH02_03_16_20_flash2.extendedFrags.fastq | fastx_barcode_splitter.pl --bcfile bol.txt --bol --mismatches 1 --prefix JH_test_bol --suffix '.txt'"
+        "cat {input} | fastx_barcode_splitter.pl --bcfile bol.txt --bol --mismatches 1 --prefix JH_test_bol --suffix '.txt'"
 
 rule eol_splitter:
     input:
@@ -28,7 +28,7 @@ rule eol_splitter:
     output:
         "JH_test_eolunmatched.txt"
     shell:
-        "cat JH02_03_16_20_flash2.extendedFrags.fastq | fastx_barcode_splitter.pl --bcfile eol.txt --eol --mismatches 1 --prefix JH_test_eol --suffix '.txt'"
+        "cat {input} | fastx_barcode_splitter.pl --bcfile eol.txt --eol --mismatches 1 --prefix JH_test_eol --suffix '.txt'"
 
 rule bol_eol_merge:
     input:
