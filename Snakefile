@@ -37,4 +37,4 @@ rule bol_eol_merge:
     output:
         "test.fq"
     shell:
-        "cat JH_test_bolunmatched.txt JH_test_eolunmatched.txt > test.fq"
+        "cat {input} > test.fq"
